@@ -54,9 +54,20 @@ nav[2].textContent = siteContent['nav']['nav-item-3'];
 nav[3].textContent = siteContent['nav']['nav-item-4'];
 nav[4].textContent = siteContent['nav']['nav-item-5'];
 nav[5].textContent = siteContent['nav']['nav-item-6'];
-// console.log(nav)
+
+let frontATag = document.createElement('a');
+let backATag = document.createElement('a');
+
+backATag.innerHTML = '<a href="#" style="color: green;">Instagram</a>';
+frontATag.innerHTML = '<a href="#" style="color: green;">Home</a>';
+let navigation = document.querySelector('nav')
+navigation.append(backATag);
+navigation.prepend(frontATag);
 
 
+nav.forEach(function(anchor){
+  anchor.style.color ='green';
+});
 
 let h1 = document.querySelectorAll('h1');
 h1[0].textContent = siteContent['cta']['h1'];
@@ -84,3 +95,10 @@ p[5].textContent = siteContent['contact']['address'];
 p[6].textContent = siteContent['contact']['phone'];
 p[7].textContent = siteContent['contact']['email'];
 p[8].textContent = siteContent['footer']['copyright'];
+
+
+// // newNav.append("back");
+// newNav.prepend("front");
+// navigation.append(newNav.textContent);
+// // console.log(newNav.textContent);
+// // console.log(nav)
