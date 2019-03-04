@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "<h1>DOM <br>Is <br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -37,6 +37,7 @@ const siteContent = {
   },
 };
 
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -55,22 +56,42 @@ nav[3].textContent = siteContent['nav']['nav-item-4'];
 nav[4].textContent = siteContent['nav']['nav-item-5'];
 nav[5].textContent = siteContent['nav']['nav-item-6'];
 
+// let frontATag = document.createElement('a');
+// let backATag = document.createElement('a');
+
+// backATag.innerHTML = '<a href="#" style="color: green;">Instagram</a>';
+// frontATag.innerHTML = '<a href="#" style="color: green;">Home</a>';
+// let navigation = document.querySelector('nav')
+// navigation.append(backATag);
+// navigation.prepend(frontATag);
+
+
+// nav.forEach(function(anchor){
+//   anchor.style.color ='green';
+// });
+
 let frontATag = document.createElement('a');
 let backATag = document.createElement('a');
 
-backATag.innerHTML = '<a href="#" style="color: green;">Instagram</a>';
-frontATag.innerHTML = '<a href="#" style="color: green;">Home</a>';
+backATag.innerHTML = 'Insta';
+frontATag.innerHTML = 'Home';
+
+backATag.href = "#";
+frontATag.href = "#";
+
 let navigation = document.querySelector('nav')
+
 navigation.append(backATag);
 navigation.prepend(frontATag);
 
+nav = document.querySelectorAll('a');
 
 nav.forEach(function(anchor){
-  anchor.style.color ='green';
+ anchor.style.color ='green';
 });
 
 let h1 = document.querySelectorAll('h1');
-h1[0].textContent = siteContent['cta']['h1'];
+h1[0].innerHTML = siteContent['cta']['h1'];
 
 let button = document.querySelectorAll('button');
 button[0].textContent = siteContent['cta']['button'];
